@@ -1,0 +1,10 @@
+stages:
+  train:
+    cmd: python -m src.train
+    deps:
+      - src/train.py
+      - src/model.py
+      - src/data_processing.py
+      - data/card_transdata.csv
+    outs:
+      - models/model.pkl

@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/card_transdata.csv
       hash: md5
-      md5: 91abbf3b11f2fd1b82e742acbde84807
-      size: 77278126
+      md5: 668092e1b928a16c894ddf77ca0552db
+      size: 77278128
     - path: src/data_processing.py
       hash: md5
       md5: 517515304717e74a1b60db32a91cedb3

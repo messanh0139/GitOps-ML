@@ -154,8 +154,8 @@ cp data/card_transdata.csv data/card_transdata.csv.bak
 
 Ajouter une fausse ligne (synthétique)
 ```sh
-echo "4.4,5.6,2.9,1.8,1.3,1.0,1.5,synthetic_class" >> data/card_transdata.csv
-echo "4.0,5.0,2.0,1.0,0.0,0.0,0.0,synthetic_class" >> data/card_transdata.csv
+echo "4.4,5.6,2.9,1.8,1.3,1.0,1.5,5.1" >> data/card_transdata.csv
+echo "4.0,5.0,2.0,1.0,0.0,0.0,0.0,4.3" >> data/card_transdata.csv
 ```
 Consultez le fichier card_transdata.csv pour voir les modifications.
 
@@ -167,7 +167,7 @@ dvc add data/card_transdata.csv
 ### Commit changes (Valider les modifications)
 ```sh
 git add data/card_transdata.csv.dvc
-git commit -m "Modified iris dataset with synthetic sample"
+git commit -m "Modified bank transactions dataset with fraude or not"
 ```
 
 ### Relancer le pipeline

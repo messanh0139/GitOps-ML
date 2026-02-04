@@ -1,10 +1,6 @@
 pandas
 numpy
 scikit-learn
-matplotlib
-seaborn
 joblib
-lightgbm
-imbalanced-learn
-mlflow
-pyyaml
+dvc
+gradio

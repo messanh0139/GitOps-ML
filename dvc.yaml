@@ -1,32 +1,31 @@
 stages:
-  data_preparation:
-    cmd: python -m src.data_preparation
+  data_processing:
+    cmd: python -m src.data_processing
     deps:
-      - src/data_processing.py
       - data/card_transdata.csv
+      - src/data_processing.py
     outs:
       - data/X_train.csv
-      - data/X_test.csv
       - data/y_train.csv
+      - data/X_test.csv
       - data/y_test.csv
 
   train:
     cmd: python -m src.train
     deps:
-      - src/train.py
       - data/X_train.csv
       - data/y_train.csv
-      - data/X_test.csv
-      - data/y_test.csv
+      - src/train.py
     outs:
-      - models/model.pkl
+      - model/model.joblib
 
   evaluate:
     cmd: python -m src.evaluate
     deps:
-      - src/evaluate.py
-      - models/model.pkl
       - data/X_test.csv
       - data/y_test.csv
+      - model/model.joblib
+      - src/evaluate.py
     metrics:
-      - reports/evaluation.json
+      - metrics.json:
+          cache: false
